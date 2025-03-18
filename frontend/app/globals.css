@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 230 35% 95%;
+  --foreground: 230 35% 10%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 230 35% 10%;
+
+  --primary: 217 91% 60%;
+  --primary-foreground: 210 20% 98%;
+
+  --secondary: 30 95% 60%;
+  --secondary-foreground: 210 20% 98%;
+
+  --accent: 280 85% 60%;
+  --accent-foreground: 210 20% 98%;
+
+  --muted: 217 33% 90%;
+  --muted-foreground: 215 20% 45%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 230 35% 10%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 210 20% 98%;
+
+  --border: 217 33% 85%;
+  --input: 217 33% 85%;
+
+  --ring: 224 76% 48%;
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 230 35% 5%;
+  --foreground: 210 20% 98%;
+
+  --card: 224 71% 4%;
+  --card-foreground: 210 20% 98%;
+
+  --primary: 217 91% 60%;
+  --primary-foreground: 210 20% 98%;
+
+  --secondary: 30 95% 60%;
+  --secondary-foreground: 210 20% 98%;
+
+  --accent: 280 85% 60%;
+  --accent-foreground: 210 20% 98%;
+
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+
+  --popover: 224 71% 4%;
+  --popover-foreground: 210 20% 98%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 210 20% 98%;
+
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+
+  --ring: 224 76% 48%;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust based on your header height */
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Glass card styles */
+.glass-card {
+  background: rgba(var(--card-rgb, 10, 10, 15), 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(10, 10, 15, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dark .glass-card-hover:hover {
+  background: rgba(15, 15, 25, 0.6);
+  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient text and borders */
+.gradient-text {
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.gradient-border:hover::after {
+  transform: scaleX(1);
+}
+
+/* Section styles */
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 py-24 relative;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold mb-12 text-center;
+}
+
+.section-subtitle {
+  @apply text-xl text-muted-foreground max-w-3xl mx-auto text-center mb-16;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium transition-all hover:brightness-110 hover:scale-105 active:scale-95;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium transition-all hover:brightness-110 hover:scale-105 active:scale-95;
+}
+
+.btn-outline {
+  @apply px-6 py-3 bg-transparent border border-primary text-primary rounded-lg font-medium transition-all hover:bg-primary/10 hover:scale-105 active:scale-95;
+}
+
+/* Animation utilities */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Cyber glow effects */
+.cyber-glow {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  transition: all 0.3s ease;
+}
+
+.cyber-glow:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4);
+}
+
+.cyber-text {
+  text-shadow: 0 0 5px rgba(59, 130, 246, 0.7);
+}
+
+/* Grid background */
+.cyber-grid {
+  background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Project card styles */
+.project-card {
+  @apply rounded-xl overflow-hidden transition-all duration-300 bg-card hover:shadow-xl;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  @apply aspect-video w-full object-cover;
+  height: 200px;
+}
+
+.project-content {
+  @apply p-6 flex flex-col flex-grow;
+}
+
+.project-title {
+  @apply text-xl font-bold mb-2;
+}
+
+.project-description {
+  @apply text-muted-foreground mb-4 flex-grow;
+}
+
+.tech-tag {
+  @apply px-3 py-1 text-xs rounded-full bg-muted/30 text-muted-foreground inline-block mr-2 mb-2;
+}
+
+.tech-tag-active {
+  @apply bg-primary/20 text-primary;
+}
+
+.project-links {
+  @apply flex justify-between items-center mt-4;
+}
+
+.project-link {
+  @apply flex items-center gap-2 text-sm text-primary hover:text-secondary transition-colors;
+}
+
+/* Education timeline styles */
+.education-timeline {
+  @apply relative;
+}
+
+.timeline-item {
+  @apply relative pl-10 pb-10 border-l-2 border-muted last:border-l-0 last:pb-0;
+}
+
+.timeline-dot {
+  @apply absolute -left-[9px] w-4 h-4 rounded-full bg-primary;
+}
+
+.timeline-content {
+  @apply glass-card p-6 ml-6;
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .section-title {
+    @apply text-3xl;
+  }
+
+  .section-subtitle {
+    @apply text-base;
+  }
+}
+
