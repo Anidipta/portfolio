@@ -15,11 +15,9 @@ const experiences = [
       "Developing advanced AI solutions for fashion tech applications, focusing on real-time face tracking and virtual try-on experiences.",
     achievements: [
       "Developed a face-tracking system for fashion accessories using deep learning",
-      "Enabled precise real-time detection and virtual try-on capabilities",
       "Worked with cutting-edge GenAI technologies and computer vision algorithms",
-      "Contributed to virtual reality (VR) implementations for immersive fashion experiences",
     ],
-    technologies: ["GenAI", "Computer Vision", "Virtual Reality", "Deep Learning", "Python"],
+    technologies: ["GenAI", "Computer Vision", "Virtual Reality", "Deep Learning", "Python", "C#"],
   },
   {
     id: 2,
@@ -33,7 +31,7 @@ const experiences = [
       "Developed time-series models to predict maize yield, achieving 15% increase in forecasting accuracy in Kenya",
       "Led data preprocessing and geospatial analysis for river water quality assessment using Rasterio",
       "Improved water quality forecasting accuracy by 20% through advanced modeling techniques",
-      "Processed LCLU, CO2, and vegetable data from Google Earth Engine for Milan's Zone 9",
+      "Processed LCLU, CO2, and vegetable data from Google Earth Engine for Milan's Zone 9 in Italy",
       "Built interactive dashboards from scratch, improving model accuracy from 85% to 93%",
     ],
     technologies: [
@@ -41,7 +39,8 @@ const experiences = [
       "Rasterio",
       "Google Earth Engine",
       "GIS Analysis",
-      "Python",
+      "Streamlit",
+      "Looker Studio",
       "Data Visualization",
     ],
   },
@@ -55,11 +54,10 @@ const experiences = [
       "Conducted comprehensive data analysis and created interactive dashboards to improve data accessibility and decision-making processes.",
     achievements: [
       "Conducted data analysis and created dashboards for 6 projects, improving data accessibility by 21.67%",
-      "Contributed to report documentation and presented key insights to stakeholders",
       "Drove an 8.75% improvement in decision-making efficiency through data visualization",
       "Utilized Looker Studio and other visualization tools to create intuitive dashboards",
     ],
-    technologies: ["Looker Studio", "Data Visualization", "Report Documentation", "Data Analysis", "Python"],
+    technologies: ["Data Visualization", "Report Documentation", "Data Analysis"],
   },
   {
     id: 4,
@@ -70,11 +68,9 @@ const experiences = [
     description: "Developed machine learning solutions with a focus on computer vision and emotion detection systems.",
     achievements: [
       "Developed a real-time emotion detection system, significantly improving accuracy",
-      "Contributed to predictive analytics models, enhancing their accuracy and performance",
       "Worked with OpenCV, TensorFlow, and Keras for computer vision applications",
-      "Implemented real-time data processing techniques for efficient model deployment",
     ],
-    technologies: ["OpenCV", "TensorFlow", "Keras", "Real-time Data Processing", "Python", "Computer Vision"],
+    technologies: ["OpenCV", "TensorFlow", "Keras", "Real-time Data Processing", "Computer Vision"],
   },
 ]
 

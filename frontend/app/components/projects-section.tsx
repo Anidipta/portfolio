@@ -18,7 +18,7 @@ const projects = [
     longDescription:
       "Developed a comprehensive disaster forecasting system that combines machine learning algorithms with blockchain technology. The system improves prediction accuracy by 8.7% compared to traditional methods and ensures secure, transparent donation tracking. Implemented GeoTIFF-based visualizations and district-level forecasting, achieving 96% accuracy and enhancing real-time disaster preparedness by 21%.",
     image: "/placeholder.svg?height=600&width=800",
-    technologies: ["Python", "Machine Learning", "Blockchain", "GeoTIFF", "Data Visualization"],
+    technologies: ["Python", "Machine Learning", "MongoDB", "Blockchain", "GeoTIFF", "Data Visualization"],
     category: "ML Projects",
     liveLink: "#",
     githubLink: "https://github.com/Anidipta/Hack-Synthesis",
@@ -32,7 +32,7 @@ const projects = [
     longDescription:
       "Developed a cloud-based apple orchard management system using YOLO for apple counting, disease classification, and leaf disease detection, integrating cloud storage and IoT sensors for real-time data analysis. Designed and deployed a Multimodal Decision-Level Fusion pipeline and created a user-friendly dashboard for efficient monitoring, visualization, and decision-making.",
     image: "/placeholder.svg?height=600&width=800",
-    technologies: ["YOLO", "Computer Vision", "IoT", "Cloud Computing", "Dashboard Development"],
+    technologies: ["YOLO", "Computer Vision", "IoT", "MySQL", "Data Visualization"],
     category: "ML Projects",
     liveLink: "#",
     githubLink: "https://github.com/Anidipta/Hack-Heritage-24",
@@ -46,7 +46,7 @@ const projects = [
     longDescription:
       "Developed a real-time system using YOLO and ResNet50 to detect people talking on phones in no-mobile zones, deployed through Streamlit, achieving 93% detection accuracy. Created software for hardware stimulation, bounding box algorithms, and IOU curves, improving model performance by 98.79% in detection precision.",
     image: "/placeholder.svg?height=600&width=800",
-    technologies: ["YOLO", "ResNet50", "Streamlit", "Computer Vision", "Real-time Detection"],
+    technologies: ["YOLO", "Streamlit", "Computer Vision", "SQL", "ResNet 50"],
     category: "ML Projects",
     liveLink: "#",
     githubLink: "https://github.com/Anidipta/Hack-Fusion",
@@ -60,7 +60,7 @@ const projects = [
     longDescription:
       "Developed a machine learning-based fraud detection system, achieving 95% accuracy, through model optimization and quantization, enhancing fraud detection efficiency. Implemented feature engineering, model evaluation techniques, and model optimization with quantization, improving system performance and user experience.",
     image: "/placeholder.svg?height=600&width=800",
-    technologies: ["Machine Learning", "Feature Engineering", "Model Optimization", "Quantization"],
+    technologies: ["Machine Learning", "Model Optimization", "SQL", "Quantization", "Streamlit"],
     category: "ML Projects",
     liveLink: "#",
     githubLink: "https://github.com/Anidipta",
@@ -88,7 +88,7 @@ const projects = [
     longDescription:
       "Developed a decentralized voting system using blockchain technology to ensure transparent, secure, and tamper-proof elections. Implemented smart contracts for vote validation and integrated biometric authentication for voter verification, resulting in a 99.9% secure voting process.",
     image: "/placeholder.svg?height=600&width=800",
-    technologies: ["Blockchain", "Web Development", "Smart Contracts", "Security"],
+    technologies: ["Blockchain", "Web Development", "Smart Contracts", "Google Firebase", "Security"],
     category: "Web2/3 Projects",
     liveLink: "#",
     githubLink: "https://github.com/Anidipta",
@@ -117,19 +117,9 @@ const mlTechnologies = [
   "Deep Learning",
   "Computer Vision",
   "YOLO",
-  "CNN",
-  "LSTM",
   "TensorFlow",
   "PyTorch",
-  "Scikit-learn",
-  "OpenCV",
-  "ResNet50",
-  "IoT",
-  "Cloud Computing",
-  "Real-time Detection",
-  "Feature Engineering",
-  "Model Optimization",
-  "Quantization"
+  "Scikit-learn"
 ].sort()
 
 const webTechnologies = [
@@ -140,34 +130,20 @@ const webTechnologies = [
   "Node.js",
   "Blockchain",
   "Smart Contracts",
-  "Web3",
   "Solidity",
-  "Ethereum",
   "HTML/CSS",
-  "Tailwind CSS",
-  "Security",
   "API Development",
-  "Database",
-  "Authentication"
+  "Database"
 ].sort()
 
 const analyticsTechnologies = [
   "Python",
   "Data Analysis",
   "Data Visualization",
-  "Pandas",
-  "NumPy",
-  "Matplotlib",
-  "Seaborn",
   "Tableau",
   "Power BI",
   "SQL",
-  "GIS",
-  "Time Series Analysis",
-  "Statistical Analysis",
-  "Dashboard Development",
-  "Business Intelligence",
-  "ETL"
+  "Business Intelligence"
 ].sort()
 
 // Get all unique technologies for "All Projects"

@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Github, Linkedin, Twitter, Mail, BookOpen, Code, Music, Camera, Globe, Coffee } from "lucide-react"
+import { Github, Linkedin, Twitter, Mail, BookOpen, Code, Music, Globe, Coffee } from "lucide-react"
 import Image from "next/image"
 
 export default function AboutSection() {
@@ -70,7 +70,7 @@ export default function AboutSection() {
                   <Linkedin size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/AnidiptaP"
                   className="p-3 rounded-full bg-muted/30 text-white hover:bg-primary/20 hover:text-primary transition-colors"
                   aria-label="Twitter"
                 >
@@ -105,15 +105,11 @@ export default function AboutSection() {
                     </div>
                     <div className="flex items-center gap-2">
                       <BookOpen size={16} className="text-secondary" />
-                      <span>Science Fiction</span>
+                      <span>Anime</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Music size={16} className="text-secondary" />
                       <span>Electronic Music Production</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Camera size={16} className="text-secondary" />
-                      <span>Photography</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Globe size={16} className="text-secondary" />
@@ -134,15 +130,13 @@ export default function AboutSection() {
 
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg">
-                I'm a results-driven AI/ML enthusiast with expertise in Python, deep learning, and geospatial analysis. I have experience developing machine learning models for agriculture, banking, and climate applications, aiming to drive real-world impact.</p>
+                 I'm a results-driven AI/ML enthusiast with expertise in Python, deep learning, and geospatial analysis. I have experience developing machine learning models for agriculture, banking, and climate applications.</p>
 
-                <p>My passion lies in leveraging AI for social good, particularly in agriculture, climate resilience, and disaster management. I focus on predictive analytics and intelligent systems that enhance decision-making and risk mitigation.</p>
+                <p>My passion lies in leveraging AI for social good, particularly in agriculture, climate resilience, and disaster management. I focus on predictive analytics and intelligent systems enhancing decision-making and risk mitigation.</p>
 
-                <p>My technical expertise includes machine learning, computer vision, and data visualization. I'm proficient in Python, C/C++, Java, and R, with experience in frameworks like TensorFlow, PyTorch, and scikit-learn.</p>
+                <p>My technical expertise includes machine learning, computer vision, and data visualization. I'm proficient in Python, C/C++, and Java, with experience in frameworks like TensorFlow, PyTorch, and scikit-learn.</p>
 
-                <p>Beyond technical work, I actively participate in hackathons and have earned several top placements. These competitions help me stay updated, refine my problem-solving skills, and collaborate on innovative solutions.</p>  
-
-                <p>I believe in technology's power to drive positive change and am always open to impactful collaborations. Feel free to connect if you'd like to discuss potential projects or opportunities!</p>
+                <p>Beyond technical work, I actively participate in hackathons and have earned several top placements. These competitions help me to refine my problem-solving skills, and collaborate on innovative solutions.</p>  
                 
               </div>
 

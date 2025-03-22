@@ -8,32 +8,24 @@ const educationItems = [
   {
     id: 1,
     institution: "Heritage Institute of Technology, Kolkata",
-    degree: "Bachelor of Technology in Computer Science and Engineering - AI/ML",
+    degree: "B.Tech in Computer Science and Engineering - AI/ML",
     duration: "2023 - Present",
     location: "Kolkata, West Bengal",
+    cgpa: "8.98",
     description:
       "Focusing on artificial intelligence, machine learning, and computer vision with specialized coursework in deep learning architectures and natural language processing.",
     icon: <GraduationCap className="text-primary" size={24} />,
   },
   {
     id: 2,
-    institution: "Aptech Institute",
-    degree: "ACCP Pro Java Course",
-    duration: "2023 - Present",
+    institution: "St. Stephen's School, Kolkata",
+    degree: "CICSE - Class 10+2",
+    duration: "2010 - 2023",
     location: "Kolkata, West Bengal",
-    description:
-      "Professional certification in advanced Java programming, covering core concepts, frameworks, and enterprise application development.",
-    icon: <Briefcase className="text-primary" size={24} />,
-  },
-  {
-    id: 3,
-    institution: "Delhi Public School (Joka) South Kolkata",
-    degree: "Higher Secondary Education",
-    duration: "2019 - 2023",
-    location: "Kolkata, West Bengal",
+    cgpa: "9.25",
     description:
       "Completed higher secondary education with focus on science and mathematics, laying the foundation for further studies in computer science and engineering.",
-    icon: <School className="text-primary" size={24} />,
+    icon: <Briefcase className="text-primary" size={24} />,
   },
 ]
 
@@ -90,6 +82,10 @@ export default function EducationSection() {
                 <div className="flex items-center gap-1">
                   <MapPin size={14} className="text-primary" />
                   <span>{item.location}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <School size={14} className="text-primary" />
+                  <span>CGPA: {item.cgpa} / 10.00</span>
                 </div>
               </div>
 

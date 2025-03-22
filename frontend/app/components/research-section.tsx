@@ -65,7 +65,7 @@ export default function ResearchSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="section-subtitle"
         >
-          My research papers presented at International Conference on Applied Algorithms (ICAA) 2025
+          My research papers till date
         </motion.p>
       </div>
 
@@ -78,24 +78,7 @@ export default function ResearchSection() {
             transition={{ duration: 0.5 }}
             className="project-card"
           >
-            <div className="relative">
-              <Image
-                src={publication.image || "/placeholder.svg"}
-                alt={publication.title}
-                width={600}
-                height={400}
-                className="project-image"
-              />
-              {publication.awards.length > 0 && (
-                <div className="absolute top-2 right-2">
-                  <div className="flex items-center gap-1 px-2 py-1 bg-secondary/80 text-white rounded-full text-xs">
-                    <Award size={12} />
-                    <span>Conference Paper</span>
-                  </div>
-                </div>
-              )}
-            </div>
-
+            
             <div className="project-content">
               <h3 className="project-title gradient-text">{publication.title}</h3>
 
@@ -108,16 +91,19 @@ export default function ResearchSection() {
                   <Calendar size={12} className="text-primary" />
                   <span>{publication.date}</span>
                 </div>
+                {/* 
                 <div className="flex items-center gap-1">
                   <Users size={12} className="text-primary" />
                   <span>{publication.authors}</span>
                 </div>
+                
                 {publication.guide && (
                   <div className="flex items-center gap-1">
                     <BookOpen size={12} className="text-primary" />
                     <span>Guide: {publication.guide}</span>
                   </div>
                 )}
+                */}
               </div>
 
               <p className="project-description">
@@ -155,6 +141,7 @@ export default function ResearchSection() {
               )}
 
               <div className="project-links">
+                {/*
                 <div className="flex gap-4">
                   <a href={publication.githubLink} target="_blank" rel="noopener noreferrer" className="project-link">
                     <Github size={16} />
@@ -166,6 +153,7 @@ export default function ResearchSection() {
                     <span>View Paper</span>
                   </a>
                 </div>
+                */}
 
                 <button
                   onClick={() => setExpandedPublication(expandedPublication === publication.id ? null : publication.id)}

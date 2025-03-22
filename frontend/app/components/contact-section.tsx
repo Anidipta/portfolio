@@ -27,12 +27,19 @@ export default function ContactSection() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formState),
+    })
+
+    if (response.ok) {
       setIsSubmitting(false)
       setIsSubmitted(true)
       setFormState({
@@ -41,7 +48,10 @@ export default function ContactSection() {
         subject: "",
         message: "",
       })
-    }, 1500)
+    } else {
+      console.error('Failed to send email')
+      setIsSubmitting(false)
+    }
   }
 
   return (

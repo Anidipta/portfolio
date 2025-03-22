@@ -39,7 +39,7 @@ const skillCategories = [
       },
       {
         name: "Streamlit",
-        icon: "/placeholder.svg?height=30&width=30",
+        icon: "https://streamlit.io/images/brand/streamlit-mark-color.svg",
       },
     ],
   },
@@ -65,7 +65,7 @@ const skillCategories = [
       },
       {
         name: "Scikit-Learn",
-        icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/scikit-learn/scikit-learn-original.svg",
+        icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
       },
       {
         name: "OpenCV",
@@ -79,11 +79,11 @@ const skillCategories = [
     skills: [
       {
         name: "BeautifulSoup",
-        icon: "/placeholder.svg?height=30&width=30",
+        icon: "https://www.crummy.com/software/BeautifulSoup/bs4/doc/_static/beautifulsoup-logo.png",
       },
       {
         name: "Scrapy",
-        icon: "/placeholder.svg?height=30&width=30",
+        icon: "https://scrapy.org/img/scrapylogo.png",
       },
       {
         name: "Selenium",
@@ -91,7 +91,7 @@ const skillCategories = [
       },
       {
         name: "Requests",
-        icon: "/placeholder.svg?height=30&width=30",
+        icon: "https://requests.readthedocs.io/en/latest/_static/requests-sidebar.png",
       },
     ],
   },
@@ -101,27 +101,27 @@ const skillCategories = [
     skills: [
       {
         name: "Matplotlib",
-        icon: "/placeholder.svg?height=30&width=30",
+        icon: "https://matplotlib.org/_static/images/logo2.svg",
       },
       {
         name: "Seaborn",
-        icon: "/placeholder.svg?height=30&width=30",
+        icon: "https://seaborn.pydata.org/_static/logo-wide-lightbg.svg",
       },
       {
         name: "Plotly",
-        icon: "/placeholder.svg?height=30&width=30",
+        icon: "https://images.plot.ly/logo/new-branding/plotly-logomark.png",
       },
       {
         name: "PowerBI",
-        icon: "/placeholder.svg?height=30&width=30",
+        icon: "https://powerbi.microsoft.com/pictures/shared/social/social-default-image.png",
       },
       {
         name: "Tableau",
-        icon: "/placeholder.svg?height=30&width=30",
+        icon: "https://www.tableau.com/sites/default/files/2021-05/tableau_rgb_500x104.png",
       },
       {
         name: "Looker Studio",
-        icon: "/placeholder.svg?height=30&width=30",
+        icon: "https://looker.com/assets/img/logos/looker-logo.svg",
       },
     ],
   },
@@ -133,11 +133,11 @@ const skillCategories = [
         name: "Git/GitHub",
         icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg",
       },
-      { name: "Team Management", icon: "/placeholder.svg?height=30&width=30" },
-      { name: "Strategic Planning", icon: "/placeholder.svg?height=30&width=30" },
-      { name: "Problem-Solving", icon: "/placeholder.svg?height=30&width=30" },
-      { name: "Communication", icon: "/placeholder.svg?height=30&width=30" },
-      { name: "MS Excel", icon: "/placeholder.svg?height=30&width=30" },
+      { name: "Team Management", icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/users.svg" },
+      { name: "Strategic Planning", icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/project-diagram.svg" },
+      { name: "Problem-Solving", icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/puzzle-piece.svg" },
+      { name: "Communication", icon: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/comments.svg" },
+      { name: "MS Excel", icon: "https://img.icons8.com/ios-filled/50/000000/microsoft-excel.png" },
     ],
   },
 ]
