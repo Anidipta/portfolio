@@ -18,7 +18,7 @@ const projects = [
     longDescription:
       "Developed a comprehensive disaster forecasting system that combines machine learning algorithms with blockchain technology. The system improves prediction accuracy by 8.7% compared to traditional methods and ensures secure, transparent donation tracking. Implemented GeoTIFF-based visualizations and district-level forecasting, achieving 96% accuracy and enhancing real-time disaster preparedness by 21%.",
     image: "/placeholder.svg?height=600&width=800",
-    technologies: ["Python", "Machine Learning", "MongoDB", "Blockchain", "GeoTIFF", "Data Visualization"],
+    technologies: ["Machine Learning", "MongoDB", "Web3", "GeoTIFF", "Data Visualization"],
     category: "ML Projects",
     liveLink: "#",
     githubLink: "https://github.com/Anidipta/Hack-Synthesis",
@@ -88,7 +88,7 @@ const projects = [
     longDescription:
       "Developed a decentralized voting system using blockchain technology to ensure transparent, secure, and tamper-proof elections. Implemented smart contracts for vote validation and integrated biometric authentication for voter verification, resulting in a 99.9% secure voting process.",
     image: "/placeholder.svg?height=600&width=800",
-    technologies: ["Blockchain", "Web Development", "Smart Contracts", "Google Firebase", "Security"],
+    technologies: ["Web3", "Web Development", "Smart Contracts", "Google Firebase", "Security"],
     category: "Web2/3 Projects",
     liveLink: "#",
     githubLink: "https://github.com/Anidipta",
@@ -102,7 +102,7 @@ const projects = [
     longDescription:
       "Created a comprehensive analytics dashboard for agricultural yield data visualization and analysis. The system integrates multiple data sources to provide insights on crop performance across different regions, soil types, and weather conditions, helping farmers make data-driven decisions to improve productivity.",
     image: "/placeholder.svg?height=600&width=800",
-    technologies: ["Data Analysis", "Dashboard Development", "Data Visualization", "Python"],
+    technologies: ["Data Analysis", "Dashboard Development", "Data Visualization"],
     category: "Analytics Projects",
     liveLink: "#",
     githubLink: "https://github.com/Anidipta",
@@ -112,7 +112,6 @@ const projects = [
 
 // Predefined technology lists for each category
 const mlTechnologies = [
-  "Python",
   "Machine Learning",
   "Deep Learning",
   "Computer Vision",
@@ -123,27 +122,22 @@ const mlTechnologies = [
 ].sort()
 
 const webTechnologies = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Blockchain",
+  "Web3",
   "Smart Contracts",
   "Solidity",
   "HTML/CSS",
   "API Development",
-  "Database"
+  "Database",
+  "Fast API",
+  "Django",
 ].sort()
 
 const analyticsTechnologies = [
-  "Python",
   "Data Analysis",
   "Data Visualization",
   "Tableau",
   "Power BI",
   "SQL",
-  "Business Intelligence"
 ].sort()
 
 // Get all unique technologies for "All Projects"
@@ -328,15 +322,19 @@ export default function ProjectsSection() {
 
                   <div className="project-links">
                     <div className="flex gap-4">
-                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                        <Github size={16} />
-                        <span>GitHub</span>
-                      </a>
+                      {project.githubLink && project.githubLink !== '#' && (
+                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="project-link">
+                          <Github size={16} />
+                          <span>GitHub</span>
+                        </a>
+                      )}
 
-                      <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                        <ExternalLink size={16} />
-                        <span>Live Demo</span>
-                      </a>
+                      {project.liveLink && project.liveLink !== '#' && (
+                        <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="project-link">
+                          <ExternalLink size={16} />
+                          <span>Live Demo</span>
+                        </a>
+                      )}
                     </div>
 
                     <button
@@ -382,4 +380,3 @@ export default function ProjectsSection() {
     </section>
   )
 }
-

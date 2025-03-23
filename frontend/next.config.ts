@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
+import { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: [
+      'raw.githubusercontent.com',
+      'streamlit.io',
+      'upload.wikimedia.org',
+      'rasterio.readthedocs.io'
+    ],
+  },
 };
 
 export default nextConfig;

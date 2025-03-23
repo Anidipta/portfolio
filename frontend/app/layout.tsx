@@ -1,4 +1,4 @@
-import type React from "react"
+import type { ReactNode } from "react"
 import type { Metadata } from "next"
 import { Outfit } from "next/font/google"
 import "./globals.css"
@@ -15,18 +15,17 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth dark">
+    <html lang="en" className="scroll-smooth">
       <head>
         <Script src="https://kit.fontawesome.com/your-code-here.js" strategy="afterInteractive" />
       </head>
-      <body className={outfit.className}>
+      <body className={`${outfit.className} bg-white text-slate-900 dark:bg-slate-900 dark:text-white min-h-screen transition-colors duration-300`}>
         <ThemeToggle />
         {children}
       </body>
     </html>
   )
 }
-

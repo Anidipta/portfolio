@@ -1,8 +1,8 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
-import { Calendar, MapPin, Award, Briefcase } from "lucide-react"
+import { Calendar, MapPin, Award, Briefcase, ChevronDown, ChevronUp } from "lucide-react"
 
 const experiences = [
   {
@@ -10,7 +10,7 @@ const experiences = [
     role: "AI/ML Intern",
     company: "Vizzle",
     duration: "Jan 2025 - Present",
-    location: "India",
+    location: "Remote - Gujurat, India",
     description:
       "Developing advanced AI solutions for fashion tech applications, focusing on real-time face tracking and virtual try-on experiences.",
     achievements: [
@@ -24,7 +24,7 @@ const experiences = [
     role: "Machine Learning Engineer",
     company: "Omdena",
     duration: "May 2024 - Present",
-    location: "Worldwide",
+    location: "Remote - Worldwide",
     description:
       "Working on advanced machine learning projects addressing climate resilience and food security, collaborating with global teams to develop impactful solutions.",
     achievements: [
@@ -49,7 +49,7 @@ const experiences = [
     role: "Data Analyst",
     company: "Evoastra Ventures",
     duration: "Jun 2024 - Aug 2024",
-    location: "Mumbai, India",
+    location: "Remote - Mumbai, India",
     description:
       "Conducted comprehensive data analysis and created interactive dashboards to improve data accessibility and decision-making processes.",
     achievements: [
@@ -64,7 +64,7 @@ const experiences = [
     role: "Data Science Intern",
     company: "Null Class",
     duration: "Feb 2024 - Apr 2024",
-    location: "Bangalore, India",
+    location: "Remote - Bangalore, India",
     description: "Developed machine learning solutions with a focus on computer vision and emotion detection systems.",
     achievements: [
       "Developed a real-time emotion detection system, significantly improving accuracy",
@@ -75,8 +75,13 @@ const experiences = [
 ]
 
 export default function ExperienceSection() {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const [expandedId, setExpandedId] = useState<number | null>(null)
+
+  const toggleExpand = (id: number) => {
+    setExpandedId(expandedId === id ? null : id)
+  }
 
   return (
     <section id="experience" className="section-container">
@@ -133,31 +138,57 @@ export default function ExperienceSection() {
 
                 <p className="mb-6 text-lg text-gray-300">{exp.description}</p>
 
-                <div className="mb-6">
-                  <h4 className="flex items-center gap-2 text-lg font-semibold text-primary mb-4">
-                    <Award size={18} />
-                    Key Achievements
-                  </h4>
-                  <ul className="space-y-3">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-secondary mr-2 mt-1">•</span>
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <button
+                  onClick={() => toggleExpand(exp.id)}
+                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium py-2 px-4 rounded-md border border-muted/50 mb-6"
+                >
+                  {expandedId === exp.id ? (
+                    <>
+                      <ChevronUp size={18} />
+                      Show Less
+                    </>
+                  ) : (
+                    <>
+                      <ChevronDown size={18} />
+                      Show More
+                    </>
+                  )}
+                </button>
 
-                <div>
-                  <h4 className="text-lg font-semibold text-primary mb-3">Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-muted/50 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                {expandedId === exp.id && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="mb-6">
+                      <h4 className="flex items-center gap-2 text-lg font-semibold text-primary mb-4">
+                        <Award size={18} />
+                        Key Achievements
+                      </h4>
+                      <ul className="space-y-3">
+                        {exp.achievements.map((achievement, i) => (
+                          <li key={i} className="flex items-start">
+                            <span className="text-secondary mr-2 mt-1">•</span>
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-primary mb-3">Technologies</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech) => (
+                          <span key={tech} className="px-3 py-1 bg-muted/50 rounded-full text-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
           ))}
