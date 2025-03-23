@@ -130,11 +130,11 @@ export default function AboutSection() {
 
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg">
-                 I'm a results-driven AI/ML enthusiast with expertise in Python, deep learning, and geospatial analysis. I have experience developing machine learning models for agriculture, banking, and climate applications.</p>
+                 I&apos;m a results-driven AI/ML enthusiast with expertise in Python, deep learning, and geospatial analysis. I have experience developing machine learning models for agriculture, banking, and climate applications.</p>
 
                 <p>My passion lies in leveraging AI for social good, particularly in agriculture, climate resilience, and disaster management. I focus on predictive analytics and intelligent systems enhancing decision-making and risk mitigation.</p>
 
-                <p>My technical expertise includes machine learning, computer vision, and data visualization. I'm proficient in Python, C/C++, and Java, with experience in frameworks like TensorFlow, PyTorch, and scikit-learn.</p>
+                <p>My technical expertise includes machine learning, computer vision, and data visualization. I&apos;m proficient in Python, C/C++, and Java, with experience in frameworks like TensorFlow, PyTorch, and scikit-learn.</p>
 
                 <p>Beyond technical work, I actively participate in hackathons and have earned several top placements. These competitions help me to refine my problem-solving skills, and collaborate on innovative solutions.</p>  
                 
@@ -180,7 +180,7 @@ export default function AboutSection() {
                     </li>
                     <li className="flex items-start">
                       <span className="text-secondary mr-2">•</span>
-                      <span>2nd Runner-up at Hack Synthesis'24, UEM Kolkata</span>
+                      <span>2nd Runner-up at Hack Synthesis&apos;24, UEM Kolkata</span>
                     </li>
                   </ul>
                 </div>

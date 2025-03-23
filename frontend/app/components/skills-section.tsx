@@ -1,5 +1,5 @@
 "use client"
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 
@@ -119,17 +119,9 @@ const skillCategories = [
 },
 ];
 
-
 export default function SkillsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const [expandedCategories, setExpandedCategories] = useState([]);
-
-  const toggleCategory = (categoryId) => {
-    setExpandedCategories((prev) =>
-      prev.includes(categoryId) ? prev.filter((id) => id !== categoryId) : [...prev, categoryId]
-    );
-  };
 
   return (
     <section id="skills" className="section-container">
@@ -145,44 +137,41 @@ export default function SkillsSection() {
       </div>
 
       <div className="max-w-6xl mx-auto space-y-16">
-        {skillCategories.map((category) => {
-          const isExpanded = expandedCategories.includes(category.id);
-          return (
-            <motion.div
-              key={category.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.01 }}
-              className="space-y-6"
-            >
-              <h3 className="text-2xl font-semibold gradient-text color-black">{category.title}</h3>
-              <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2.5">
-                {category.skills.map((skill) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                    whileHover={{
-                      scale: 1.03,
-                      background: "linear-gradient(90deg, rgba(59, 130, 246, 0.5), rgba(249, 115, 22, 0.5))"
-                    }}
-                    className="flex flex-col items-center justify-center p-6 bg-[#0f1117] border border-[#a5a6ac] rounded-lg transition-all duration-300"
-                  >
-                    <Image
-                      src={skill.icon}
-                      alt={skill.name}
-                      width={40}
-                      height={40}
-                      className="object-contain"
-                    />
-                    <span className="text-sm text-center">{skill.name}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          );
-        })}
+        {skillCategories.map((category) => (
+          <motion.div
+            key={category.id}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6"
+          >
+            <h3 className="text-2xl font-semibold gradient-text color-black">{category.title}</h3>
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2.5">
+              {category.skills.map((skill) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                  whileHover={{
+                    scale: 1.03,
+                    background: "linear-gradient(90deg, rgba(59, 130, 246, 0.5), rgba(249, 115, 22, 0.5))"
+                  }}
+                  className="flex flex-col items-center justify-center p-6 bg-[#0f1117] border border-[#a5a6ac] rounded-lg transition-all duration-300"
+                >
+                  <Image
+                    src={skill.icon}
+                    alt={skill.name}
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                  <span className="text-sm text-center">{skill.name}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

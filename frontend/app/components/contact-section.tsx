@@ -72,7 +72,7 @@ export default function ContactSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="section-subtitle"
         >
-          Have a project in mind or want to collaborate? I'd love to hear from you!
+          Have a project in mind or want to collaborate? I&apos;d love to hear from you!
         </motion.p>
       </div>
 
@@ -226,7 +226,7 @@ export default function ContactSection() {
                   </div>
                   <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
                   <p className="text-center text-muted-foreground mb-6">
-                    Thank you for reaching out. I'll get back to you as soon as possible.
+                    Thank you for reaching out. I&apos;ll get back to you as soon as possible.
                   </p>
                   <button onClick={() => setIsSubmitted(false)} className="btn-outline">
                     Send Another Message

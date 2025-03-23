@@ -31,7 +31,7 @@ const experiences = [
       "Developed time-series models to predict maize yield, achieving 15% increase in forecasting accuracy in Kenya",
       "Led data preprocessing and geospatial analysis for river water quality assessment using Rasterio",
       "Improved water quality forecasting accuracy by 20% through advanced modeling techniques",
-      "Processed LCLU, CO2, and vegetable data from Google Earth Engine for Milan's Zone 9 in Italy",
+      "Processed LCLU, CO2, and vegetable data from Google Earth Engine for Milan&apos;s Zone 9 in Italy",
       "Built interactive dashboards from scratch, improving model accuracy from 85% to 93%",
     ],
     technologies: [
@@ -101,7 +101,7 @@ export default function ExperienceSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="section-subtitle"
         >
-          A journey through my professional career and the impactful roles I've held
+          A journey through my professional career and the impactful roles I&apos;ve held
         </motion.p>
       </div>
 

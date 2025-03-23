@@ -24,6 +24,7 @@ module.exports = {
         'img.etimg.com',
         'i.pinimg.com',
         'logohistory.net',
+        'raw.githubusercontent.com',
         'www.google.com',
         'dash.plotly.com',
         'e7.pngegg.com',
