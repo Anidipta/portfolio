@@ -40,6 +40,7 @@ const skillCategories = [
       { name: "Scikit-learn", icon: "https://e7.pngegg.com/pngimages/39/4/png-clipart-logo-scikit-learn-python-github-machine-learning-text-orange.png", },
       { name: "TensorFlow", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg", },
       { name: "Keras", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/keras/keras-original.svg", },
+      { name: "CatBoost", icon: "https://upload.wikimedia.org/wikipedia/commons/c/cc/CatBoostLogo.png", },
       { name: "PyTorch", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg", },
       { name: "Rasterio", icon: "https://geog-312.gishub.org/_static/logo.png", },
       { name: "Google Earth Engine", icon: "https://image.pngaaa.com/772/546772-middle.png",},
@@ -146,7 +147,7 @@ export default function SkillsSection() {
             className="space-y-6"
           >
             <h3 className="text-2xl font-semibold gradient-text color-black">{category.title}</h3>
-            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2.5">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2.5">
               {category.skills.map((skill) => (
                 <motion.div
                   key={skill.name}

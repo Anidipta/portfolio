@@ -42,7 +42,7 @@ export default function AboutSection() {
             <div className="flex flex-col items-center lg:items-start">
               <div className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-2xl overflow-hidden mb-8 border-4 border-primary/30 p-1">
                 <Image
-                  src="/placeholder.svg?height=300&width=300"
+                  src="https://media.licdn.com/dms/image/v2/D5603AQFusbAPXu7_Jw/profile-displayphoto-shrink_800_800/B56ZRT8U_8GoAc-/0/1736575112043?e=1748476800&v=beta&t=ZjdLlU765FzGnciHMoG3Kd_55v4JZxIFh_mhjOQ4VFQ"
                   alt="Anidipta Pal"
                   width={300}
                   height={300}

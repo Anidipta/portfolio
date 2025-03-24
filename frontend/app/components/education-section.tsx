@@ -18,7 +18,7 @@ const educationItems = [
   },
   {
     id: 2,
-    institution: "St. Stephen&apos;s School, Kolkata",
+    institution: "St. Stephens School, Kolkata",
     degree: "CICSE - Class 10+2",
     duration: "2010 - 2023",
     location: "Kolkata, West Bengal",

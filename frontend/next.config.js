@@ -1,14 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     domains: [
       'glad.geog.umd.edu',
       'raw.githubusercontent.com',
       'python-pillow.github.io',
+      'media.licdn.com',
+      'www.linkedin.com',
       'streamlit.io',
       'www.svgrepo.com',
+      'upload.wikimedia.org',
       'velog.velcdn.com',
       'upload.wikimedia.org',
       'logowik.com',
