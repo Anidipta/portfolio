@@ -105,11 +105,11 @@ export default function AboutSection() {
                     </div>
                     <div className="flex items-center gap-2">
                       <BookOpen size={16} className="text-secondary" />
-                      <span>Anime</span>
+                      <span>Anime / Manghua</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Music size={16} className="text-secondary" />
-                      <span>Electronic Music Production</span>
+                      <span>Anime Musics / Phonk</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Globe size={16} className="text-secondary" />

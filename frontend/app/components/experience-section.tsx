@@ -11,8 +11,7 @@ const experiences = [
     company: "Vizzle",
     duration: "Jan 2025 - Present",
     location: "Remote - Gujurat, India",
-    description:
-      "Developing advanced AI solutions for fashion tech applications, focusing on real-time face tracking and virtual try-on experiences.",
+    description:"",
     achievements: [
       "Developed a face-tracking system for fashion accessories using deep learning",
       "Worked with cutting-edge GenAI technologies and computer vision algorithms",
@@ -25,8 +24,7 @@ const experiences = [
     company: "Omdena",
     duration: "May 2024 - Present",
     location: "Remote - Worldwide",
-    description:
-      "Working on advanced machine learning projects addressing climate resilience and food security, collaborating with global teams to develop impactful solutions.",
+    description:"",
     achievements: [
       "Developed time-series models to predict maize yield, achieving 15% increase in forecasting accuracy in Kenya",
       "Led data preprocessing and geospatial analysis for river water quality assessment using Rasterio",
@@ -50,8 +48,7 @@ const experiences = [
     company: "Evoastra Ventures",
     duration: "Jun 2024 - Aug 2024",
     location: "Remote - Mumbai, India",
-    description:
-      "Conducted comprehensive data analysis and created interactive dashboards to improve data accessibility and decision-making processes.",
+    description: "",
     achievements: [
       "Conducted data analysis and created dashboards for 6 projects, improving data accessibility by 21.67%",
       "Drove an 8.75% improvement in decision-making efficiency through data visualization",
@@ -65,7 +62,7 @@ const experiences = [
     company: "Null Class",
     duration: "Feb 2024 - Apr 2024",
     location: "Remote - Bangalore, India",
-    description: "Developed machine learning solutions with a focus on computer vision and emotion detection systems.",
+    description: "",
     achievements: [
       "Developed a real-time emotion detection system, significantly improving accuracy",
       "Worked with OpenCV, TensorFlow, and Keras for computer vision applications",
