@@ -1,8 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Cpu, Satellite, Eye, Code, Award, BookOpen, Briefcase, Users } from "lucide-react"
 import Image from "next/image"
+import { useState } from "react"
 import type { ColorTheme } from "@/components/theme-selector"
 
 interface AboutProps {
@@ -10,9 +11,24 @@ interface AboutProps {
 }
 
 export default function About({ theme }: AboutProps) {
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+  const [showStats, setShowStats] = useState(false)
+  const [animating, setAnimating] = useState(false)
+  const [iconRotation, setIconRotation] = useState(0)
+
+  const handleClick = () => {
+    if (animating) return
+    setAnimating(true)
+    setIconRotation(-45)
+    setShowStats(true)
+
+    setTimeout(() => {
+      // Shake animation then reset rotation
+      setIconRotation(0)
+      setTimeout(() => {
+        setShowStats(false)
+        setAnimating(false)
+      }, 200) // Wait for shake to end before hiding stats
+    }, 2000)
   }
 
   const stats = [
@@ -25,149 +41,148 @@ export default function About({ theme }: AboutProps) {
   return (
     <section id="about" className="py-20 relative">
       <div className="container mx-auto px-4">
+
+        {/* Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          variants={fadeIn}
+          variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           className="text-center mb-16"
         >
-          <h2
-            className={`text-3xl md:text-4xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-r ${theme.gradientClass}`}
-          >
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-r ${theme.gradientClass}`}>
             About Me
           </h2>
-          <div className={`h-1 w-20 bg-${theme.primary}-500 mx-auto`}></div>
+          <div className={`h-1 w-20 bg-${theme.primary}-500 mx-auto`} />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        {/* Main Grid */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+
+          {/* Left Column */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            variants={fadeIn}
-            className="relative"
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            className="flex flex-col items-center"
           >
-            <div className={`aspect-square rounded-2xl overflow-hidden border-2 border-${theme.primary}-500 relative`}>
-              <div className={`absolute inset-0 bg-gradient-to-br from-${theme.primary}-900/40 to-black/60 z-10`}></div>
+            <div className={`relative w-72 h-72 rounded-2xl overflow-hidden border-2 border-${theme.primary}-500`}>
+              <div className={`absolute inset-0 bg-gradient-to-br from-${theme.primary}-900/40 to-black/60 z-10`} />
               <Image
-                src="/placeholder.svg?height=600&width=600"
-                alt="Profile"
-                width={600}
-                height={600}
-                className="object-cover w-full h-full"
+                src="https://media.licdn.com/dms/image/v2/D5603AQFusbAPXu7_Jw/profile-displayphoto-shrink_800_800/B56ZRT8U_8GoAc-/0/1736575112043?e=1748476800&v=beta&t=ZjdLlU765FzGnciHMoG3Kd_55v4JZxIFh_mhjOQ4VFQ"
+                alt="Anidipta Pal"
+                fill
+                className="object-cover"
               />
             </div>
-            <div
-              className={`absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-${theme.primary}-600 to-${theme.secondary}-600 rounded-full flex items-center justify-center`}
-            >
-              <Satellite className="w-12 h-12 text-white" />
-            </div>
 
-            {/* Stats cards */}
-            <div className="grid grid-cols-2 gap-3 mt-12">
-              {stats.map((stat, index) => (
+            {/* Satellite Icon with Animation */}
+            <motion.div
+              onClick={handleClick}
+              animate={{
+                rotate: iconRotation,
+                x: iconRotation === 0 && showStats ? [0, -5, 5, -5, 5, 0] : 0,
+              }}
+              transition={{
+                duration: iconRotation === 0 && showStats ? 0.6 : 0.3,
+              }}
+              className={`mt-6 w-24 h-24 cursor-pointer bg-gradient-to-br from-${theme.primary}-600 to-${theme.secondary}-600 rounded-full flex items-center justify-center`}
+            >
+              <Satellite className="w-10 h-10 text-white" />
+            </motion.div>
+
+            {/* Animated Frame + Stats */}
+            <AnimatePresence>
+              {showStats && (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
-                  className={`bg-gray-900/60 backdrop-blur-sm p-4 rounded-lg border border-${theme.primary}-800/30`}
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 20, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                  className="grid grid-cols-2 gap-3 mt-2 w-full max-w-s"
                 >
-                  <div className="flex items-center gap-2 mb-1">
-                    {stat.icon}
-                    <span className="text-gray-400 text-sm">{stat.label}</span>
-                  </div>
-                  <div className={`text-2xl font-bold ${theme.primaryClass}`}>{stat.value}</div>
+                  {stats.map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 + index * 0.1 }}
+                      className={`bg-gray-900/60 backdrop-blur-sm p-4 rounded-lg border border-${theme.primary}-800/30`}
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        {stat.icon}
+                        <span className="text-gray-400 text-sm">{stat.label}</span>
+                      </div>
+                      <div className={`text-2xl font-bold ${theme.primaryClass}`}>{stat.value}</div>
+                    </motion.div>
+                  ))}
                 </motion.div>
-              ))}
-            </div>
+              )}
+            </AnimatePresence>
           </motion.div>
 
+          {/* Right Column - Bio & Skills */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            variants={fadeIn}
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           >
             <h3 className="text-2xl font-bold mb-4 text-gray-100">
-              Passionate Computer Vision & Satellite Imagery Engineer
+              Anidipta Pal <span className={`text-${theme.primary}-500`}>  | </span> AI/ML Engineer & Data Scientist
             </h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              I specialize in developing cutting-edge computer vision algorithms for satellite imagery analysis. With
-              expertise in remote sensing, image processing, and machine learning, I transform complex geospatial data
-              into actionable insights.
+            <p className="text-gray-400 mb-3 leading-relaxed">
+            Computer vision person with a focus on building intelligent systems that solve real-world problems. 
+            Currently, I work as a Machine Learning Engineer at Omdena and a Python Developer at Mahakarshan.</p>
+            <p className="text-gray-400 mb-3 leading-relaxed">
+            Worked with these technologies to address challenges in agriculture, climate change, and disaster management  mainly.
             </p>
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              My work bridges the gap between advanced computer vision techniques and real-world applications in
-              environmental monitoring, urban planning, agriculture, and disaster response.
+            <p className="text-gray-400 mb-3 leading-relaxed">
+            Technically, I'm proficient in Python, C/C++, and Java, and skilled in frameworks like TensorFlow, PyTorch, and scikit-learn.
+            I enjoy turning complex data into insights through machine learning and data visualization.
             </p>
 
-            {/* Achievements section */}
             <div className="mb-8">
               <h4 className={`text-xl font-semibold ${theme.primaryClass} mb-4`}>Key Achievements</h4>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <Award className={`w-5 h-5 text-${theme.primary}-500 mr-2 mt-1 flex-shrink-0`} />
-                  <span className="text-gray-300">
-                    Developed a satellite imagery analysis platform that increased detection accuracy by 35%
-                  </span>
+                  <Award className={`w-5 h-5 text-${theme.primary}-500 mr-2 mt-1`} />
+                  <span className="text-gray-300">Bounty Winner + 1st Place Eglos X Aglos Hackathon</span>
                 </li>
                 <li className="flex items-start">
-                  <Award className={`w-5 h-5 text-${theme.primary}-500 mr-2 mt-1 flex-shrink-0`} />
-                  <span className="text-gray-300">
-                    Published 15+ research papers in top-tier computer vision and remote sensing journals
-                  </span>
+                  <Award className={`w-5 h-5 text-${theme.primary}-500 mr-2 mt-1`} />
+                  <span className="text-gray-300">2nd Place at the Video Frame Sorting Hackathon</span>
                 </li>
                 <li className="flex items-start">
-                  <Award className={`w-5 h-5 text-${theme.primary}-500 mr-2 mt-1 flex-shrink-0`} />
-                  <span className="text-gray-300">
-                    Led a team that won the International Satellite Imagery Competition 2022
-                  </span>
+                  <Award className={`w-5 h-5 text-${theme.primary}-500 mr-2 mt-1`} />
+                  <span className="text-gray-300">Space India Hackathon Finalist</span>
                 </li>
               </ul>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <motion.div
-                whileHover={{ y: -5 }}
-                className={`bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-${theme.primary}-800/30`}
-              >
-                <Eye className={`w-8 h-8 ${theme.primaryClass} mb-2`} />
-                <h4 className="font-semibold text-gray-100 mb-1">Computer Vision</h4>
-                <p className="text-gray-400 text-sm">Advanced algorithms for image analysis</p>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ y: -5 }}
-                className={`bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-${theme.primary}-800/30`}
-              >
-                <Satellite className={`w-8 h-8 ${theme.secondaryClass} mb-2`} />
-                <h4 className="font-semibold text-gray-100 mb-1">Satellite Imagery</h4>
-                <p className="text-gray-400 text-sm">Remote sensing & geospatial analysis</p>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ y: -5 }}
-                className={`bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-${theme.primary}-800/30`}
-              >
-                <Cpu className={`w-8 h-8 ${theme.primaryClass} mb-2`} />
-                <h4 className="font-semibold text-gray-100 mb-1">Machine Learning</h4>
-                <p className="text-gray-400 text-sm">AI-powered image classification</p>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ y: -5 }}
-                className={`bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-${theme.primary}-800/30`}
-              >
-                <Code className={`w-8 h-8 ${theme.secondaryClass} mb-2`} />
-                <h4 className="font-semibold text-gray-100 mb-1">Software Development</h4>
-                <p className="text-gray-400 text-sm">Building scalable CV solutions</p>
-              </motion.div>
+            <div className="grid grid-cols-2 gap-2">
+              {[  
+                { Icon: Eye, title: "Computer Vision", desc: "Advanced algorithms for image analysis", iconClass: theme.primaryClass },
+                { Icon: Satellite, title: "Satellite Imagery", desc: "Remote sensing & geospatial analysis", iconClass: theme.secondaryClass },
+                { Icon: Cpu, title: "Machine Learning", desc: "AI-powered image classification", iconClass: theme.primaryClass },
+                { Icon: Code, title: "Software Development", desc: "Building scalable CV solutions", iconClass: theme.secondaryClass }
+              ].map(({ Icon, title, desc, iconClass }, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{ y: -5 }}
+                  className={`bg-gray-800/50 backdrop-blur-sm p-3 rounded-md border border-${theme.primary}-800/30`}
+                >
+                  <div className="flex items-center space-x-3 mb-1">
+                    <Icon className={`w-6 h-6 ${iconClass}`} />
+                    <h4 className="font-semibold text-gray-100 text-sm">{title}</h4>
+                  </div>
+                  <p className="text-gray-400 text-xs">{desc}</p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>

@@ -3,30 +3,30 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
-import { Github, ExternalLink, Satellite, Map, CloudRain, Cpu } from "lucide-react"
+import { Github, ExternalLink, Cpu, Eye, Database, Rocket } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("all")
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   const categories = [
     { id: "all", label: "All" },
-    { id: "satellite", label: "Satellite", icon: <Satellite className="w-4 h-4 mr-1" /> },
-    { id: "mapping", label: "Mapping", icon: <Map className="w-4 h-4 mr-1" /> },
-    { id: "climate", label: "Climate", icon: <CloudRain className="w-4 h-4 mr-1" /> },
-    { id: "ai", label: "AI", icon: <Cpu className="w-4 h-4 mr-1" /> },
+    { id: "ai", label: "AIML", icon: <Cpu className="w-4 h-4 mr-1" /> },
+    { id: "computervision", label: "Computer Vision", icon: <Eye className="w-4 h-4 mr-1" /> },
+    { id: "datascience", label: "Data Science", icon: <Database className="w-4 h-4 mr-1" /> },
+    { id: "fullstack", label: "Full-Stack", icon: <Rocket className="w-4 h-4 mr-1" /> },
   ]
 
   const projects = [
     {
       id: 1,
-      title: "SatelliteVision",
-      description:
-        "An advanced computer vision platform for analyzing satellite imagery and detecting objects, changes, and patterns.",
+      title: "VisionAI",
+      description: "Advanced computer vision system for real-time object detection and image analysis with deep learning.",
       image: "/placeholder.svg?height=400&width=600",
-      categories: ["satellite", "ai"],
-      technologies: ["Python", "TensorFlow", "OpenCV", "AWS"],
+      categories: ["ai", "computervision"],
+      technologies: ["Python", "PyTorch", "OpenCV", "TensorRT"],
       links: {
         github: "#",
         live: "#",
@@ -34,12 +34,11 @@ export default function Projects() {
     },
     {
       id: 2,
-      title: "GeoSpatial Analyzer",
-      description:
-        "A tool for processing and visualizing geospatial data from multiple satellite sources with interactive mapping capabilities.",
+      title: "DataInsight",
+      description: "Interactive dashboard for complex data analysis with machine learning integration and visualization.",
       image: "/placeholder.svg?height=400&width=600",
-      categories: ["mapping", "satellite"],
-      technologies: ["JavaScript", "React", "Mapbox", "GDAL"],
+      categories: ["datascience", "ai"],
+      technologies: ["Python", "Scikit-learn", "Power BI", "Pandas"],
       links: {
         github: "#",
         live: "#",
@@ -47,12 +46,11 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: "ClimateWatch",
-      description:
-        "Monitoring climate change indicators through satellite imagery analysis, focusing on glaciers, forests, and urban heat islands.",
+      title: "FullStack AI",
+      description: "End-to-end AI application with React frontend, FastAPI backend, and machine learning model serving.",
       image: "/placeholder.svg?height=400&width=600",
-      categories: ["climate", "satellite"],
-      technologies: ["Python", "PyTorch", "QGIS", "Google Earth Engine"],
+      categories: ["fullstack", "ai"],
+      technologies: ["React", "FastAPI", "PyTorch", "Docker"],
       links: {
         github: "#",
         live: "#",
@@ -60,12 +58,11 @@ export default function Projects() {
     },
     {
       id: 4,
-      title: "DeepSat",
-      description:
-        "Deep learning models for satellite image classification and segmentation with a focus on agricultural applications.",
+      title: "CV Analyzer",
+      description: "Computer vision platform for automated image processing and feature extraction at scale.",
       image: "/placeholder.svg?height=400&width=600",
-      categories: ["ai", "satellite"],
-      technologies: ["Python", "Keras", "GDAL", "Docker"],
+      categories: ["computervision", "datascience"],
+      technologies: ["Python", "OpenCV", "TensorFlow", "AWS"],
       links: {
         github: "#",
         live: "#",
@@ -73,12 +70,11 @@ export default function Projects() {
     },
     {
       id: 5,
-      title: "Urban Mapper",
-      description:
-        "Automated mapping of urban infrastructure and changes over time using multi-temporal satellite imagery.",
+      title: "AI Dashboard",
+      description: "Comprehensive dashboard for monitoring and interacting with multiple AI models in production.",
       image: "/placeholder.svg?height=400&width=600",
-      categories: ["mapping", "ai"],
-      technologies: ["Python", "TensorFlow", "PostGIS", "Leaflet"],
+      categories: ["fullstack", "datascience"],
+      technologies: ["React", "Node.js", "MongoDB", "D3.js"],
       links: {
         github: "#",
         live: "#",
@@ -86,11 +82,11 @@ export default function Projects() {
     },
     {
       id: 6,
-      title: "Disaster Response System",
-      description: "Real-time analysis of satellite imagery for rapid disaster assessment and response coordination.",
+      title: "Deep Learning API",
+      description: "Scalable API for serving deep learning models with automatic scaling and monitoring.",
       image: "/placeholder.svg?height=400&width=600",
-      categories: ["climate", "mapping"],
-      technologies: ["Python", "FastAPI", "Redis", "Sentinel Hub"],
+      categories: ["ai", "fullstack"],
+      technologies: ["FastAPI", "PyTorch", "Kubernetes", "Prometheus"],
       links: {
         github: "#",
         live: "#",
@@ -99,10 +95,41 @@ export default function Projects() {
   ]
 
   const filteredProjects =
-    activeCategory === "all" ? projects : projects.filter((project) => project.categories.includes(activeCategory))
+    activeCategory === "all" 
+      ? projects 
+      : projects.filter((project) => project.categories.includes(activeCategory))
+
+  // Generate particles for tech badges
+  const generateParticles = (count: number) => {
+    return Array.from({ length: count }).map((_, i) => {
+      const size = Math.random() * 4 + 2
+      return (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: [0, 1, 0],
+            scale: [0, 1, 0],
+            x: Math.random() * 100 - 50,
+            y: Math.random() * 100 - 50,
+          }}
+          transition={{ 
+            duration: Math.random() * 1 + 1,
+            repeat: Infinity,
+            delay: Math.random() * 0.5
+          }}
+          className="absolute rounded-full bg-purple-400"
+          style={{
+            width: `${size}px`,
+            height: `${size}px`,
+          }}
+        />
+      )
+    })
+  }
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -111,49 +138,69 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-gray-300">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-green-300">
             Featured Projects
           </h2>
           <div className="h-1 w-20 bg-purple-500 mx-auto"></div>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        {/* Animated category filter */}
+        <motion.div 
+          className="flex flex-wrap justify-center gap-3 mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ staggerChildren: 0.1 }}
+        >
           {categories.map((category) => (
-            <Button
+            <motion.div
               key={category.id}
-              variant={activeCategory === category.id ? "default" : "outline"}
-              className={`${
-                activeCategory === category.id
-                  ? "bg-purple-600 hover:bg-purple-700"
-                  : "bg-gray-900/60 border-purple-800/30 hover:border-purple-600/50 text-gray-300"
-              } rounded-full px-4 py-2 flex items-center`}
-              onClick={() => setActiveCategory(category.id)}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {category.icon}
-              {category.label}
-            </Button>
+              <Button
+                variant={activeCategory === category.id ? "default" : "outline"}
+                className={`${
+                  activeCategory === category.id
+                    ? "bg-purple-600 hover:bg-purple-700"
+                    : "bg-gray-900/60 border-purple-800/30 hover:border-purple-600/50 text-green-300"
+                } rounded-full px-4 py-2 flex items-center`}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                {category.icon}
+                {category.label}
+              </Button>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
+        {/* Projects grid with tech particle effects */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 whileHover={{ y: -5 }}
-                className="bg-gray-900/60 backdrop-blur-sm rounded-lg overflow-hidden border border-purple-800/30 hover:border-purple-600/50 transition-all duration-300"
+                onHoverStart={() => setHoveredProject(project.id)}
+                onHoverEnd={() => setHoveredProject(null)}
+                className="relative bg-gray-900/60 backdrop-blur-sm rounded-lg overflow-hidden border border-purple-800/30 hover:border-purple-600/50 transition-all duration-300"
               >
+                {/* Tech badge particles */}
+                {hoveredProject === project.id && (
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    {generateParticles(15)}
+                  </div>
+                )}
+
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={project.image || "/placeholder.svg"}
@@ -163,7 +210,7 @@ export default function Projects() {
                     className="object-cover w-full h-full transition-transform duration-500 hover:scale-110"
                   />
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black/80"></div>
-                  <div className="absolute bottom-0 left-0 p-4 flex gap-2">
+                  {/* <div className="absolute bottom-0 left-0 p-4 flex gap-2">
                     {project.categories.map((cat) => {
                       const categoryObj = categories.find((c) => c.id === cat)
                       return (
@@ -173,39 +220,85 @@ export default function Projects() {
                         </Badge>
                       )
                     })}
-                  </div>
+                  </div> */}
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
                   <p className="text-gray-300 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <motion.div 
+                    className="flex flex-wrap gap-2 mb-4 font-medium text-m"
+                    layout
+                  >
                     {project.technologies.map((tech, index) => (
-                      <Badge key={index} variant="outline" className="bg-gray-800/80 text-gray-300">
-                        {tech}
-                      </Badge>
+                      <motion.div
+                        key={index}
+                        layout
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 400 }}
+                      >
+                        <Badge variant="outline" className="text-green-300">
+                          {tech}
+                        </Badge>
+                      </motion.div>
                     ))}
-                  </div>
+                  </motion.div>
                   <div className="flex gap-3">
-                    <a
+                    <motion.a
                       href={project.links.github}
-                      className="text-gray-300 hover:text-purple-400 transition-colors"
+                      className="text-green-300 hover:text-purple-400 transition-colors"
                       aria-label={`GitHub repository for ${project.title}`}
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.9 }}
                     >
                       <Github className="w-5 h-5" />
-                    </a>
-                    <a
+                    </motion.a>
+                    <motion.a
                       href={project.links.live}
-                      className="text-gray-300 hover:text-purple-400 transition-colors"
+                      className="text-green-300 hover:text-purple-400 transition-colors"
                       aria-label={`Live demo for ${project.title}`}
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.9 }}
                     >
                       <ExternalLink className="w-5 h-5" />
-                    </a>
+                    </motion.a>
                   </div>
                 </div>
               </motion.div>
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {/* Floating tech bubbles in background */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+          {["Python", "React", "PyTorch", "TensorFlow", "OpenCV", "FastAPI"].map((tech, i) => (
+            <motion.span
+              key={i}
+              initial={{ 
+                opacity: 0,
+                y: Math.random() * 100,
+                x: Math.random() * 100
+              }}
+              animate={{ 
+                opacity: [0.1, 0.3, 0.1],
+                y: [Math.random() * 100, Math.random() * 100 + 50],
+              }}
+              transition={{
+                duration: Math.random() * 10 + 10,
+                repeat: Infinity,
+                repeatType: "reverse",
+                delay: Math.random() * 5
+              }}
+              className="absolute text-xs text-purple-400/30"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                fontSize: `${Math.random() * 12 + 8}px`,
+              }}
+            >
+              {tech}
+            </motion.span>
+          ))}
+        </div>
       </div>
     </section>
   )

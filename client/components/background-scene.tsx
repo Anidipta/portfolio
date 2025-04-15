@@ -17,42 +17,8 @@ function SatelliteModel({ theme }: SatelliteModelProps) {
 
   useEffect(() => {
     // Map theme colors to hex values
-    switch (theme.primary) {
-      case "blue":
-        primaryColor.current = "#3b82f6"
-        break
-      case "amber":
-        primaryColor.current = "#b45309"
-        break
-      case "red":
-        primaryColor.current = "#ef4444"
-        break
-      case "yellow":
-        primaryColor.current = "#facc15"
-        break
-      default:
-        primaryColor.current = "#3b82f6"
-    }
-
-    switch (theme.secondary) {
-      case "green":
-        secondaryColor.current = "#10b981"
-        break
-      case "red":
-        secondaryColor.current = "#ef4444"
-        break
-      case "orange":
-        secondaryColor.current = "#fb923c"
-        break
-      case "cyan":
-        secondaryColor.current = "#22d3ee"
-        break
-      case "rose":
-        secondaryColor.current = "#f43f5e"
-        break
-      default:
-        secondaryColor.current = "#10b981"
-    }
+    primaryColor.current = "purple"
+    secondaryColor.current = "pink"
   }, [theme])
 
   useFrame((state) => {

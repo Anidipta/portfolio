@@ -43,7 +43,7 @@ export default function Research() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-300">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-yellow-300">
             Research Publications
           </h2>
           <div className="h-1 w-20 bg-blue-500 mx-auto"></div>
@@ -58,16 +58,16 @@ export default function Research() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="bg-gray-900/60 backdrop-blur-sm border-blue-800/30 hover:border-blue-600/50 transition-all duration-300 h-full flex flex-col">
+              <Card className="bg-gray-900/60 backdrop-blur-sm border-orange-800/30 hover:border-yellow-600/50 transition-all duration-300 h-full flex flex-col">
                 <CardHeader>
                   <div className="flex justify-between items-start">
-                    <FileText className="w-8 h-8 text-blue-400 mb-2" />
-                    <Badge variant="outline" className="bg-blue-900/50 text-blue-200">
+                    <FileText className="w-8 h-8 text-orange-400 mb-2" />
+                    <Badge variant="outline" className="bg-orange-900/50 text-blue-200">
                       {paper.year}
                     </Badge>
                   </div>
                   <CardTitle className="text-gray-100">{paper.title}</CardTitle>
-                  <CardDescription className="text-blue-300">{paper.journal}</CardDescription>
+                  <CardDescription className="text-yellow-300">{paper.journal}</CardDescription>
                 </CardHeader>
                 <CardContent className="text-gray-300 flex-grow">
                   <p>{paper.description}</p>
@@ -84,7 +84,7 @@ export default function Research() {
           ))}
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -95,7 +95,7 @@ export default function Research() {
             View all publications
             <ArrowUpRight className="ml-1 w-4 h-4" />
           </a>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

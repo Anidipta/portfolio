@@ -16,12 +16,12 @@ export default function Hero() {
           className="max-w-3xl mx-auto"
         >
           <h1
-            className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"
+            className="text-4xl md:text-6xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"
           >
-            Computer Vision & Satellite Imagery Engineer
+            Computer Vision Engineer & Data Scientist
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Transforming satellite data into actionable insights through advanced computer vision
+            Transforming data into dashboard for others through advanced computer vision
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -35,7 +35,7 @@ export default function Hero() {
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1SYRfo-OS3mPErKnByR2j3bH6xluqJb9o/view?usp=sharing"
                 download
                 className="inline-flex items-center bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-700 transition-all duration-300"
               >
@@ -47,7 +47,7 @@ export default function Hero() {
 
           <div className="flex justify-center space-x-6">
             <motion.a
-              href="https://github.com/"
+              href="https://github.com/Anidipta"
               target="_blank"
               rel="noopener noreferrer"
               title="GitHub"
@@ -57,7 +57,7 @@ export default function Hero() {
               <Github size={28} />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/"
+              href="https://linkedin.com/in/anidipta-pal"
               target="_blank"
               rel="noopener noreferrer"
               title="LinkedIn"
@@ -67,7 +67,7 @@ export default function Hero() {
               <Linkedin size={28} />
             </motion.a>
             <motion.a
-              href="https://twitter.com/"
+              href="https://twitter.com/@AnidiptaP"
               target="_blank"
               rel="noopener noreferrer"
               title="Twitter"

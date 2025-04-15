@@ -107,7 +107,7 @@ export default function TechStack() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-gray-300">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 inline-block bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-pink-300">
             Tech Stack
           </h2>
           <div className="h-1 w-20 bg-purple-500 mx-auto"></div>
@@ -126,19 +126,19 @@ export default function TechStack() {
                 {category.title}
               </motion.h3>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-2.5">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-2.5">
                 {category.items.map((item, itemIndex) => (
                   <motion.div
                     key={itemIndex}
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.3, delay: itemIndex * 0.05 }}
+                    transition={{ duration: 0.1, delay: itemIndex * 0.05 }}
                     whileHover={{
                       y: -5,
-                      backgroundColor: "rgb(20, 44, 124)",
+                      background: "linear-gradient(to right, rgba(34, 211, 238, 0.3), rgba(244, 114, 182, 0.3))",
                       borderColor: "rgba(0, 204, 255, 0.9)",
-                      transition: { duration: 0.1 },
+                      transition: { duration: 0.001 },
                     }}
                     className="flex flex-col items-center justify-center bg-gray-900 border border-gray-800 rounded-lg p-4 h-32 transition-all duration-300"
                   >

@@ -15,7 +15,7 @@ export type ColorTheme = {
 
 const colorThemes: ColorTheme[] = [
   {
-    name: "Blue+Green",
+    name: "",
     primary: "blue",
     secondary: "green",
     primaryClass: "text-blue-400",
@@ -23,7 +23,7 @@ const colorThemes: ColorTheme[] = [
     gradientClass: "from-blue-400 to-green-300",
   },
   {
-    name: "Dusty Brown+Red",
+    name: "",
     primary: "amber",
     secondary: "red",
     primaryClass: "text-amber-700",
@@ -31,7 +31,7 @@ const colorThemes: ColorTheme[] = [
     gradientClass: "from-amber-700 to-red-500",
   },
   {
-    name: "Red+Orange",
+    name: "",
     primary: "red",
     secondary: "orange",
     primaryClass: "text-red-500",
@@ -39,7 +39,7 @@ const colorThemes: ColorTheme[] = [
     gradientClass: "from-red-500 to-orange-400",
   },
   {
-    name: "Blue+Cyan",
+    name: "",
     primary: "blue",
     secondary: "cyan",
     primaryClass: "text-blue-500",
@@ -47,7 +47,7 @@ const colorThemes: ColorTheme[] = [
     gradientClass: "from-blue-500 to-cyan-400",
   },
   {
-    name: "Yellow+Vermillion",
+    name: "",
     primary: "yellow",
     secondary: "rose",
     primaryClass: "text-yellow-400",
@@ -93,7 +93,6 @@ export default function ThemeSelector({ onThemeChange }: ThemeSelectorProps) {
       >
         <div className="flex items-center">
           <span className={`w-3 h-3 rounded-full bg-gradient-to-r ${selectedTheme.gradientClass} mr-2`}></span>
-          <span className="text-gray-300 text-sm">{selectedTheme.name}</span>
         </div>
         <ChevronDown className="w-4 h-4 text-gray-400" />
       </button>
@@ -111,11 +110,10 @@ export default function ThemeSelector({ onThemeChange }: ThemeSelectorProps) {
                 <button
                   key={theme.name}
                   onClick={() => handleThemeChange(theme)}
-                  className="flex items-center justify-between w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 transition-colors"
+                  className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-800 transition-colors"
                 >
                   <div className="flex items-center">
                     <span className={`w-3 h-3 rounded-full bg-gradient-to-r ${theme.gradientClass} mr-2`}></span>
-                    <span>{theme.name}</span>
                   </div>
                   {selectedTheme.name === theme.name && <Check className="w-4 h-4 text-green-400" />}
                 </button>
