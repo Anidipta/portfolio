@@ -89,7 +89,7 @@ export default function About({ theme }: AboutProps) {
               transition={{
                 duration: iconRotation === 0 && showStats ? 0.6 : 0.3,
               }}
-              className={`mt-6 w-24 h-24 cursor-pointer bg-gradient-to-br from-${theme.primary}-600 to-${theme.secondary}-600 rounded-full flex items-center justify-center`}
+              className={`mt-6 w-24 h-24 cursor-pointer bg-gradient-to-br from-amber-600/30 to-rose-600/65 rounded-full flex items-center justify-center`}
             >
               <Satellite className="w-10 h-10 text-white" />
             </motion.div>
