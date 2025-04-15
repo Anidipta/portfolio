@@ -6,28 +6,22 @@ import { GraduationCap, Calendar } from "lucide-react"
 export default function Education() {
   const education = [
     {
-      degree: "Ph.D. in Computer Science",
-      specialization: "Computer Vision & Machine Learning",
-      institution: "Stanford University",
-      period: "2013 - 2016",
+      degree: "B.Tech in Computer Science and Engineering",
+      specialization: "Artificial Intelligence & Machine Learning",
+      institution: "Heritage Institute of Technology, Kolkata",
+      cgpa: "9.0/10",
+      period: "2023 - Present",
       description:
-        "Researched novel deep learning approaches for satellite image analysis. Thesis focused on multi-spectral image segmentation techniques.",
+        "Focusing on artificial intelligence, machine learning, and computer vision with specialized coursework in deep learning architectures and natural language processing.",
     },
     {
-      degree: "M.S. in Electrical Engineering",
-      specialization: "Signal Processing",
-      institution: "Massachusetts Institute of Technology",
-      period: "2011 - 2013",
+      degree: "ISC",
+      specialization: "PCM with Computer Science",
+      institution: "St. Stephens School, Kolkata",
+      cgpa: "92.0%",
+      period: "2021 - 2023",
       description:
-        "Specialized in digital signal processing with applications in remote sensing. Developed algorithms for satellite image enhancement and restoration.",
-    },
-    {
-      degree: "B.S. in Computer Engineering",
-      specialization: "Computer Systems",
-      institution: "University of California, Berkeley",
-      period: "2007 - 2011",
-      description:
-        "Focused on computer architecture and embedded systems. Senior project involved building an automated satellite image classification system.",
+        "Completed higher secondary education with focus on science and mathematics, laying the foundation for further studies in computer science and engineering.",
     },
   ]
 
@@ -70,7 +64,13 @@ export default function Education() {
                       {edu.period}
                     </div>
                   </div>
-                  <div className="text-lg text-purple-300 mb-1">{edu.institution}</div>
+                  <div className="flex flex-wrap justify-between items-start mb-1">
+                    <h3 className="text-lg text-purple-300 mb-1">{edu.institution}</h3>
+                    <div className="flex items-center text-purple-400 text-sm">
+                      <GraduationCap className="w-4 h-4 mr-1" />
+                      {edu.cgpa}
+                    </div>
+                  </div>
                   <div className="text-sm text-gray-400 mb-3">{edu.specialization}</div>
                   <p className="text-gray-300">{edu.description}</p>
                 </div>

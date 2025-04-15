@@ -8,28 +8,20 @@ import { Badge } from "@/components/ui/badge"
 export default function Research() {
   const researchPapers = [
     {
-      title: "Deep Learning Approaches for Multi-Spectral Satellite Image Segmentation",
-      journal: "Journal of Remote Sensing",
-      year: 2023,
+      title: "AI-driven Monitoring System for Detecting People Using Mobile Phones in Restricted Zone",
+      journal: "Springer Nature",
+      year: 2025,
       description:
-        "A novel approach to semantic segmentation of multi-spectral satellite imagery using transformer-based architectures.",
-      tags: ["Deep Learning", "Semantic Segmentation", "Multi-Spectral"],
+        "A novel approach to detect people talking over phone in restricted zones using AI and computer vision techniques.",
+      tags: ["Artificial Intelligence","Computer Vision","Real-time Detection","Safety Monitoring"],
     },
     {
-      title: "Automated Change Detection in Urban Environments Using Time-Series Satellite Imagery",
-      journal: "IEEE Transactions on Geoscience and Remote Sensing",
-      year: 2022,
+      title: "Integrating AI, IoT, and Drones for Sustainable Apple Orchard Monitoring in Society 5.0",
+      journal: "Springer Nature",
+      year: 2025,
       description:
-        "A framework for detecting and classifying changes in urban environments using temporal satellite image sequences.",
-      tags: ["Change Detection", "Urban Analysis", "Time-Series"],
-    },
-    {
-      title: "Fusion of SAR and Optical Satellite Imagery for Improved Land Cover Classification",
-      journal: "ISPRS Journal of Photogrammetry and Remote Sensing",
-      year: 2021,
-      description:
-        "A multi-modal approach combining synthetic aperture radar (SAR) and optical satellite data for enhanced land cover classification.",
-      tags: ["Data Fusion", "SAR", "Land Cover"],
+        "A multi-modal decision level fusion model implemented in drones using hybrid models of custum YOLO, ResNET, and CNN models.",
+      tags: ["Artificial Intelligence","IoT","Drone Technology","Smart Agriculture","Society 5.0"],
     },
   ]
 
@@ -49,7 +41,7 @@ export default function Research() {
           <div className="h-1 w-20 bg-blue-500 mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
           {researchPapers.map((paper, index) => (
             <motion.div
               key={index}

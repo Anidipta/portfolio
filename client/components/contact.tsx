@@ -12,28 +12,28 @@ export default function Contact() {
     {
       name: "GitHub",
       icon: Github,
-      url: "https://github.com",
+      url: "https://github.com/Anidipta",
       color: "from-gray-700 to-gray-900",
       hoverColor: "from-gray-600 to-gray-800"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com",
+      url: "https://linkedin.com/in/anidipta-pal",
       color: "from-blue-600 to-blue-800",
       hoverColor: "from-blue-500 to-blue-700"
     },
     {
       name: "Twitter",
       icon: Twitter,
-      url: "https://twitter.com",
+      url: "https://x.com/AnidiptaP",
       color: "from-sky-500 to-sky-700",
       hoverColor: "from-sky-400 to-sky-600"
     },
     {
       name: "Email",
       icon: Mail,
-      url: "mailto:contact@example.com",
+      url: "mailto:anidiptapal@gmail.com",
       color: "from-purple-600 to-purple-800",
       hoverColor: "from-purple-500 to-purple-700"
     }
@@ -44,20 +44,20 @@ export default function Contact() {
     {
       icon: <Mail className="w-6 h-6 text-purple-400" />,
       title: "Email",
-      value: "contact@example.com",
-      url: "mailto:contact@example.com"
+      value: "anidiptapal@gmail.com",
+      url: "mailto:anidiptapal@gmail.com"
     },
     {
       icon: <Phone className="w-6 h-6 text-purple-400" />,
       title: "Phone",
-      value: "+1 (123) 456-7890",
-      url: "tel:+11234567890"
+      value: "+91 7003040268",
+      url: "tel:+917003040268"
     },
     {
       icon: <MapPin className="w-6 h-6 text-purple-400" />,
       title: "Location",
-      value: "San Francisco, California",
-      url: "https://maps.google.com"
+      value: "West Bengal, India",
+      url: ""
     }
   ]
 
@@ -205,7 +205,7 @@ export default function Contact() {
                 }}
               >
                 <a 
-                  href="mailto:contact@example.com" 
+                  href="mailto:anidiptapal@gmail.com" 
                   className="inline-flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-purple-800 text-white text-sm font-medium hover:from-purple-700 hover:to-purple-900 transition-all"
                 >
                   <Mail className="w-4 h-4 mr-2" />
