@@ -64,11 +64,11 @@ export default function TechStack() {
         { name: "Seaborn", icon: "https://cdn.worldvectorlogo.com/logos/seaborn-1.svg", },
         { name: "Plotly", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/plotly/plotly-original.svg", },
         { name: "Tableau", icon: "https://www.svgrepo.com/show/354428/tableau-icon.svg", },
-        { name: "Google Data Studio", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/googlecloud/googlecloud-original.svg", },
+        { name: "Google Data Studio", icon: "https://e-cens.com/wp-content/uploads/elementor/thumbs/google-data-studio-logo_e-cens_training-plbnc8lo3u3s8qo0m9ub5vp4x4t0yejfte7dzqk85g.png", },
         { name: "Power BI", icon: "https://logohistory.net/wp-content/uploads/2023/05/Power-BI-Symbol.png", },
         { name: "MS Excel", icon: "https://img.etimg.com/thumb/msid-100802411,width-300,height-225,imgsize-3022,resizemode-75/how-to-add-checkboxes-in-ms-excel-see-a-complete-step-by-step-guide.jpg", },
         { name: "Looker", icon: "https://www.svgrepo.com/show/354012/looker-icon.svg", },
-        { name: "Google Analytics", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/googlecloud/googlecloud-original.svg", },
+        { name: "Google Analytics", icon: "https://logos-world.net/wp-content/uploads/2021/02/Google-Analytics-Logo.png", },
       ],
     },
     {

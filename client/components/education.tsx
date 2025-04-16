@@ -58,21 +58,21 @@ export default function Education() {
 
                 <div className="bg-gray-900/60 backdrop-blur-sm p-6 rounded-lg border border-purple-800/30 hover:border-purple-600/50 transition-colors duration-300">
                   <div className="flex flex-wrap justify-between items-start mb-2">
-                    <h3 className="text-xl font-bold text-white">{edu.degree}</h3>
+                    <h3 className="text-lg font-bold text-white">{edu.degree}</h3>
                     <div className="flex items-center text-purple-400 text-sm">
                       <Calendar className="w-4 h-4 mr-1" />
                       {edu.period}
                     </div>
                   </div>
                   <div className="flex flex-wrap justify-between items-start mb-1">
-                    <h3 className="text-lg text-purple-300 mb-1">{edu.institution}</h3>
+                    <h3 className="text-base text-purple-300 mb-1">{edu.institution}</h3>
                     <div className="flex items-center text-purple-400 text-sm">
-                      <GraduationCap className="w-4 h-4 mr-1" />
-                      {edu.cgpa}
+                      <GraduationCap className="w-4 h-4 mr-1 text-amber-400" />
+                      <p className="text-amber-400 font-mono">{edu.cgpa}</p>
                     </div>
                   </div>
-                  <div className="text-sm text-gray-400 mb-3">{edu.specialization}</div>
-                  <p className="text-gray-300">{edu.description}</p>
+                  <div className="text-sm text-rose-400 mb-3">{edu.specialization}</div>
+                  <p className="text-gray-300 font-mono">{edu.description}</p>
                 </div>
               </motion.div>
             ))}

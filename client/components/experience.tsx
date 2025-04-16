@@ -75,7 +75,7 @@ export default function Experience() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
                   <h3 className="text-xl md:text-2xl font-bold text-white">{exp.title}</h3>
-                  <span className="text-m text-pink-400 font-mono">{exp.period}</span>
+                  <span className="text-base text-pink-400 font-mono">{exp.period}</span>
                 </div>
                 <p className="text-purple-300 font-medium">{exp.company}</p>
                 <p className="text-gray-300 leading-relaxed">{exp.description}</p>

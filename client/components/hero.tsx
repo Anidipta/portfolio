@@ -18,7 +18,7 @@ export default function Hero() {
           <h1
             className="text-4xl md:text-6xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"
           >
-            Computer Vision Engineer & Data Scientist
+            AI Engineer & Computer Vision Engineer & Data Scientist
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
             Transforming data into dashboard for others through advanced computer vision
@@ -40,7 +40,7 @@ export default function Hero() {
                 className="inline-flex items-center bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-700 transition-all duration-300"
               >
                 <FileText className="mr-2 h-5 w-5" />
-                Download Resume
+                View My Resume
               </a>
             </motion.div>
           </div>

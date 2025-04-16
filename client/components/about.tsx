@@ -32,10 +32,10 @@ export default function About({ theme }: AboutProps) {
   }
 
   const stats = [
-    { value: "1.2+", label: "Years Experience", icon: <Briefcase className={`w-4 h-4 ${theme.primaryClass}`} /> },
-    { value: "20+", label: "Projects Completed", icon: <Code className={`w-4 h-4 ${theme.primaryClass}`} /> },
-    { value: "2", label: "Publications", icon: <BookOpen className={`w-4 h-4 ${theme.primaryClass}`} /> },
-    { value: "8+", label: "Collaborations", icon: <Users className={`w-4 h-4 ${theme.primaryClass}`} /> },
+    { value: "1.2+", color:theme.primaryClass, label: "Years Experience", icon: <Briefcase className={`w-4 h-4 ${theme.primaryClass}`} /> },
+    { value: "20+", color:theme.secondaryClass, label: "Projects Completed", icon: <Code className={`w-4 h-4 ${theme.secondaryClass}`} /> },
+    { value: "2", color:theme.primaryClass, label: "Publications", icon: <BookOpen className={`w-4 h-4 ${theme.primaryClass}`} /> },
+    { value: "8+", color:theme.secondaryClass, label: "Collaborations", icon: <Users className={`w-4 h-4 ${theme.secondaryClass}`} /> },
   ]
 
   return (
@@ -110,13 +110,13 @@ export default function About({ theme }: AboutProps) {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 + index * 0.1 }}
-                      className={`bg-gray-900/60 backdrop-blur-sm p-4 rounded-lg border border-${theme.primary}-800/30`}
+                      className={`bg-gray-900/60 backdrop-blur-sm p-4 rounded-lg border border-rose-800/40`}
                     >
                       <div className="flex items-center gap-2 mb-1">
                         {stat.icon}
                         <span className="text-gray-400 text-sm">{stat.label}</span>
                       </div>
-                      <div className={`text-2xl font-bold ${theme.primaryClass}`}>{stat.value}</div>
+                      <div className={`text-2xl font-bold ${stat.color}`}>{stat.value}</div>
                     </motion.div>
                   ))}
                 </motion.div>
