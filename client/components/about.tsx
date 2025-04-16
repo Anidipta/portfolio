@@ -35,7 +35,7 @@ export default function About({ theme }: AboutProps) {
     { value: "1.2+", label: "Years Experience", icon: <Briefcase className={`w-4 h-4 ${theme.primaryClass}`} /> },
     { value: "20+", label: "Projects Completed", icon: <Code className={`w-4 h-4 ${theme.primaryClass}`} /> },
     { value: "2", label: "Publications", icon: <BookOpen className={`w-4 h-4 ${theme.primaryClass}`} /> },
-    { value: "10+", label: "Collaborations", icon: <Users className={`w-4 h-4 ${theme.primaryClass}`} /> },
+    { value: "8+", label: "Collaborations", icon: <Users className={`w-4 h-4 ${theme.primaryClass}`} /> },
   ]
 
   return (

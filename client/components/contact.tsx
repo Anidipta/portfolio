@@ -155,7 +155,7 @@ export default function Contact() {
             className="space-y-6"
           >
             <motion.div 
-              className="relative p-6 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 overflow-hidden"
+              className="relative p-6 rounded-xl  border border-gray-700 overflow-hidden"
               whileHover={{ scale: 1.01 }}
             >
               <div className="absolute -right-10 -top-10 w-24 h-10 bg-purple-500/10 rounded-full blur-xl"></div>
