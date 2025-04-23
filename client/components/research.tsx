@@ -11,6 +11,7 @@ export default function Research() {
       title: "AI-driven Monitoring System for Detecting People Using Mobile Phones in Restricted Zone",
       journal: "Springer Nature",
       year: 2025,
+      link: "https://link.springer.com/chapter/10.1007/978-3-031-84543-7_12",
       description:
         "A novel approach to detect people talking over phone in restricted zones using AI and computer vision techniques.",
       tags: ["Artificial Intelligence","Computer Vision","Real-time Detection","Safety Monitoring"],
@@ -19,6 +20,7 @@ export default function Research() {
       title: "Integrating AI, IoT, and Drones for Sustainable Apple Orchard Monitoring in Society 5.0",
       journal: "Springer Nature",
       year: 2025,
+      link: "https://link.springer.com/chapter/10.1007/978-3-031-84543-7_28",
       description:
         "A multi-modal decision level fusion model implemented in drones using hybrid models of custum YOLO, ResNET, and CNN models.",
       tags: ["Artificial Intelligence","IoT","Drone Technology","Smart Agriculture","Society 5.0"],
@@ -58,7 +60,11 @@ export default function Research() {
                       {paper.year}
                     </Badge>
                   </div>
-                  <CardTitle className="text-gray-100">{paper.title}</CardTitle>
+                  <CardTitle className="text-gray-100">
+                    <a href={paper.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {paper.title}
+                    </a>
+                  </CardTitle>
                   <CardDescription className="text-yellow-300">{paper.journal}</CardDescription>
                 </CardHeader>
                 <CardContent className="text-gray-300 flex-grow">

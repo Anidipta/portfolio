@@ -70,7 +70,7 @@ export default function Projects() {
     },
     {
       title: "Drone-Based Apple Orchard Management",
-      description: "YOLO-powered drone system for counting apples and detecting diseases.",
+      description: "YOLO-powered system for counting apples and detecting diseases.",
       image: "/assets/AEML.png",
       categories: ["fullstack", "computervision"],
       technologies: ["YOLO", "Python", "Drone Data", "Arduino", "ResNET"],
@@ -142,7 +142,7 @@ export default function Projects() {
     },
     {
       title: "EDVITA - Streamlining Education Success",
-      description: "Test scheduling and management platform built with full-stack tools.",
+      description: "Test scheduling and management platform with code edito.",
       image: "/assets/edu.png",
       categories: ["fullstack"],
       technologies: ["Next.js", "TypeScript", "MongoDB", "Supabase API"],
